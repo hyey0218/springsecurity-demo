@@ -1,0 +1,13 @@
+
+
+
+joins:
+  decryptKey: "B05wEne+4e2fYH5T0wbZ9PjkSol9pZSOJf0eiaZGH82/BxZYIgBtPcIqtb8S8OShU3/90HGcxwg="
+  decryptSecret: "2"
+
+core:
+  datasource:
+    jdbc-url: jdbc:sqlserver://222.122.208.101:1433;databaseName=DB_HEYNEWS
+    driver-class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: USER_HEYNEWS
+    password: 0p0lsbtmelql!@
