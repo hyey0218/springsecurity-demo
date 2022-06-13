@@ -1,13 +1,45 @@
-
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
 
 
 joins:
   decryptKey: "B05wEne+4e2fYH5T0wbZ9PjkSol9pZSOJf0eiaZGH82/BxZYIgBtPcIqtb8S8OShU3/90HGcxwg="
   decryptSecret: "2"
 
-core:
+#core:
+#  datasource:
+#    jdbc-url: jdbc:sqlserver://222.122.208.101:1433;databaseName=DB_HEYNEWS
+#    driver-class: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#    username: USER_HEYNEWS
+#    password: 0p0lsbtmelql!@
+
+spring:
   datasource:
-    jdbc-url: jdbc:sqlserver://222.122.208.101:1433;databaseName=DB_HEYNEWS
-    driver-class: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    username: USER_HEYNEWS
-    password: 0p0lsbtmelql!@
+    url: jdbc:h2:file:./h2-test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  h2:
+    console:
+      path: /h2
+      enabled: true
+
+
+  jpa:
+    hibernate:
+      ddl-auto: create #create update none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    format_sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect

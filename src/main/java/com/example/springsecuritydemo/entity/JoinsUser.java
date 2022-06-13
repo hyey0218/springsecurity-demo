@@ -5,7 +5,7 @@ import com.example.springsecuritydemo.enums.ContentNotice;
 import com.example.springsecuritydemo.enums.UserType;
 import lombok.*;
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.envers.Audited;
+//import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.security.core.GrantedAuthority;
@@ -24,8 +24,8 @@ import java.util.stream.Collectors;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Audited(withModifiedFlag = true)
-public class User extends AuditColumns<String> {
+//@Audited(withModifiedFlag = true)
+public class JoinsUser extends AuditColumns<String> {
 
     @Id
     @GeneratedValue
@@ -60,7 +60,7 @@ public class User extends AuditColumns<String> {
     private ContentNotice contentNotice;
 
     @Builder
-    public User(@NotNull String name, @NotNull String password, String nickName,
+    public JoinsUser(@NotNull String name, @NotNull String password, String nickName,
                 @NotNull @Email String email, @NotNull List<UserType> types,
                 ContentNotice contentNotice) {
         this.name = name;
